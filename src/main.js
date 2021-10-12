@@ -12,6 +12,8 @@ let object;
 let initRotate = 0;
 let rotate = true;
 
+const githubPages = true;
+
 function chooseModel(n) {
     initRotate = 0;
     rotate = true;
@@ -22,15 +24,15 @@ function chooseModel(n) {
     }
 
     if (n === 1) {
-        init('./models/result_test2_512.obj');
+        init(githubPages ? './src/models/result_test2_512.obj' : './models/result_test2_512.obj');
     }
     
     if (n === 2) {
-        init('./models/result_test3_512.obj');
+        init(githubPages ? './src/models/result_test3_512.obj' : './models/result_test3_512.obj');
     }
 
     if (n === 3) {
-        init('./models/result_test4_512.obj');
+        init(githubPages ? './src/models/result_test4_512.obj' : './models/result_test4_512.obj');
     }
     
     animate();
@@ -44,7 +46,7 @@ init();
 //render(); // remove when using next line for animation loop (requestAnimationFrame)
 animate();
 
-function init(model='./models/result_test2_512.obj') {
+function init(model=githubPages ? './src/models/result_test2_512.obj' : './models/result_test2_512.obj') {
 
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xcccccc);
